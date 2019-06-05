@@ -1,0 +1,20 @@
+syntax = 'proto3';
+
+package protobuf;
+
+option java_package = "dev.ng.marketpricestore.protobuf";
+option java_outer_classname = "SymbolPriceProtos";
+
+message SymbolPrice {
+  string price = 1;
+  Symbol symbol = 2;
+  string unit = 3;
+  string time = 4;
+
+  enum Symbol {
+    Gold = 0;
+    Silver = 1;
+    Platinum = 2;
+  }
+
+}
