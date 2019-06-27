@@ -11,15 +11,13 @@ RUN apt-get install -y python-dev
 WORKDIR /usr/src/app
 
 RUN git clone https://github.com/karthikngrepo/ActorBasedKafkaSymbolPriceStreamer.git
-WORKDIR /usr/src/app/ActorBasedKafkaSymbolPriceStreamer/scripts/SymbolPriceScraper
 
-#This will not be needed once this is moved to git
-COPY requirements.txt ./
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-RUN ls -lrt
+WORKDIR /usr/src/app/ActorBasedKafkaSymbolPriceStreamer/scripts/SymbolPriceScraper
+
 COPY . .
 
-CMD [ "python3", "./symbol_price_scraper/symbol_price_scraper/spiders/quotes_spider.py" ]
+CMD [ "python3", "." ]
 
 
