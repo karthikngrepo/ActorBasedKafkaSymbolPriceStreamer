@@ -12,7 +12,7 @@ WORKDIR /usr/src/app
 
 RUN git clone https://github.com/karthikngrepo/ActorBasedKafkaSymbolPriceStreamer.git
 
-COPY /usr/src/app/ActorBasedKafkaSymbolPriceStreamer/requirements.txt ./
+COPY ./requirements.txt ./
 
 RUN pip3 install --no-cache-dir -r requirements.txt
 
